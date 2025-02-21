@@ -1,14 +1,14 @@
-import styles from './Profile.module.css';
+import css from "./Profile.module.css";
 
 const Profile = (props) => {
   return (
     <div>
-      <div className={styles['profile-container']}>
+      <div>
         <img
           src={props.avatar}
           alt="User avatar"
         />
-        <p>{props.name}</p>
+        <p>{props.username}</p>
         <p>@{props.tag}</p>
         <p>{props.location}</p>
       </div>
@@ -16,7 +16,7 @@ const Profile = (props) => {
       <ul>
         <li>
           <span>Followers</span>
-          <span>{props.stats.followers}</span>
+          <span>{props.stats.follower}</span>
         </li>
         <li>
           <span>Views</span>
