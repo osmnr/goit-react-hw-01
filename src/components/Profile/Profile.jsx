@@ -2,29 +2,29 @@ import css from "./Profile.module.css";
 
 const Profile = (props) => {
   return (
-    <div>
-      <div>
-        <img
+    <div className={css.container}>
+      <div className={css.topSection}>
+        <img className={css.profileImage}
           src={props.avatar}
           alt="User avatar"
         />
-        <p>{props.username}</p>
-        <p>@{props.tag}</p>
-        <p>{props.location}</p>
+        <p className={css.userName}>{props.username}</p>
+        <p className={css.tag}>@{props.tag}</p>
+        <p className={css.location}>{props.location}</p>
       </div>
 
-      <ul>
-        <li>
+      <ul className={css.bottomSection}>
+        <li className={css.listItems}>
           <span>Followers</span>
-          <span>{props.stats.follower}</span>
+          <span className={css.values}>{props.stats.followers}</span>
         </li>
-        <li>
+        <li className={css.listItems}>
           <span>Views</span>
-          <span>{props.stats.views}</span>
+          <span className={css.values}>{props.stats.views}</span>
         </li>
-        <li>
+        <li className={css.listItems}>
           <span>Likes</span>
-          <span>{props.stats.likes}</span>
+          <span className={css.values}>{props.stats.likes}</span>
         </li>
       </ul>
     </div>
