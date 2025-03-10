@@ -12,8 +12,8 @@ const App = () => {
     return (
         <>
             <Profile {...userData}/>
-            <FriendList {...friends}/>
-            <TransactionHistory {...transactions}/>
+            <FriendList friends={friends} />
+            <TransactionHistory transactions={transactions}/>
         </>
     )
 }

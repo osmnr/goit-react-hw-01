@@ -1,8 +1,8 @@
 import css from "./TransactionHistory.module.css";
 
-const TransactionHistory = (props) => {
+const TransactionHistory = ({ transactions }) => {
   return (
-    <table>
+    <table className={css.transactionTable}>
       <thead>
         <tr>
           <th>Type</th>
@@ -12,16 +12,13 @@ const TransactionHistory = (props) => {
       </thead>
 
       <tbody>
-        <tr>
-          <td>Invoice</td>
-          <td>125</td>
-          <td>USD</td>
-        </tr>
-        <tr>
-          <td>Withdrawal</td>
-          <td>85</td>
-          <td>USD</td>
-        </tr>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <tr key={id} className={css.transactionRow}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
